@@ -67,7 +67,8 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        if(balance >= price) {
+        if(balance >= price) 
+        {
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
@@ -81,9 +82,12 @@ public class TicketMachine
             // Reduce the balance by the prince.
             balance = balance - price;
         }
-        else {
-            System.out.println("You must insert at least: " +
-                               (price - balance) + " more cents.");
+        else 
+        {
+           int amoutLeftToPlay;
+           amoutLeftToPlay = total - balance;
+            System.out.println("Te falta " +
+                               (amoutLeftToPlay) + " para poder comprar un billete");
                     
         }
     }
@@ -98,5 +102,12 @@ public class TicketMachine
         amountToRefund = balance;
         balance = 0;
         return amountToRefund;
+    }
+    public int emptyMachine()
+    {
+        int todoElDinero;
+        todoElDinero = balance + total;
+        total = 0;
+        return todoElDinero;    
     }
 }
